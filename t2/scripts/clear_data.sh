@@ -1,13 +1,12 @@
 #!/bin/bash
 
-for result in ../dataset/1/*.txt
-do  
-    rm $result -f
-
-done
-
-for result in ../dataset/2/*.txt
-do  
-    rm $result -f
-
+for type in 1 2 3
+do
+    for opt in O0 O2
+    do
+        for result in ../dataset/$type/$opt/*.txt
+        do  
+            rm $result -f
+        done
+    done
 done
