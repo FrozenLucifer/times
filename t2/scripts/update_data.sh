@@ -1,6 +1,6 @@
 #!/bin/bash
 
-count_tests=100
+count_tests=$1
 
 for type in 1 2 3
 do
@@ -8,12 +8,10 @@ do
     do
         app=../apps/app_"$type"_"$opt".exe
         echo STARTED type: $type opt: $opt
-
         for test in ../tests/*.txt
         do  
             test_n=${test/"../tests/"/}
             test_n=${test_n/".txt"/}
-
             output=../dataset/$type/$opt/"output_"$test_n.txt
 
             i=0
@@ -24,6 +22,5 @@ do
             done
         done
         echo ENDED type: $type opt: $opt
-
     done
 done
